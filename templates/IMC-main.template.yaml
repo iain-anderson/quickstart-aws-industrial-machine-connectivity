@@ -163,7 +163,9 @@ Parameters:
       - IgnitionCirrusLink
       - IgnitionFileExport
       - KepwareFileExport
-    Description: The driver that the Asset Model Converter uses to translate hierarchy data. If you're not using the default driver, choose IgnitionFileExport or KepwareFileExport.
+      - IOTechXRT
+      - Element Unify
+    Description: The driver that the Asset Model Converter uses to translate hierarchy data. If you're not using the default driver, choose IgnitionFileExport, KepwareFileExport or IOTechXRT. If you're not using Asset Model Converter, select Element Unify.
 Conditions:
   UsingDefaultBucket: !Equals
     - !Ref QSS3BucketName

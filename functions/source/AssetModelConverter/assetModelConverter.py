@@ -20,6 +20,7 @@ from s3Utils import S3Utils
 from drivers.ignitionCirrusLinkDriver import CirrusLinkDriver
 from drivers.kepserver_file_driver import KepserverFileDriver
 from drivers.ignitionFileDriver import IgnitionFileDriver
+from drivers.iotech_xrt_driver import IOTechXRTDriver
 # from createSitewiseResources import CreateSitewiseResources
 
 log = logging.getLogger('assetModelConverter')
@@ -44,6 +45,7 @@ class AssetModelConverter:
             'IgnitionCirrusLink': CirrusLinkDriver,
             'KepwareFileExport': KepserverFileDriver,
             'IgnitionFileExport': IgnitionFileDriver,
+            'IOTechXRT': IOTechXRTDriver,
         }
 
         self.driverClass = self.driverTable[self.driverName]
@@ -209,6 +211,7 @@ if __name__ == '__main__':
     os.environ['IncomingBucket'] = 'nathanimcenv-amcincomingresource-11urj0786l9n1'
     # os.environ['DriverName'] = 'IgnitionCirrusLink'
     # os.environ['DriverName'] = 'IgnitionFileExport'
+    # os.environ['DriverName'] = 'IOTechXRT'
     os.environ['DriverName'] = 'KepwareFileExport'
     os.environ['DynamoDB_Model_Table'] = 'imc_asset_model_table'
     os.environ['DynamoDB_Asset_Table'] = 'imc_asset_table'
